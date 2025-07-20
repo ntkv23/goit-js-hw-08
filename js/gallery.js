@@ -63,7 +63,6 @@ const images = [
     description: 'Lighthouse Coast Sea',
   },
 ];
-
 const gallery = document.querySelector('.gallery');
 
 const galleryMarkup = images
@@ -90,8 +89,7 @@ gallery.addEventListener('click', onGalleryClick);
 function onGalleryClick(event) {
   event.preventDefault();
 
-  const isImage = event.target.classList.contains('gallery-image');
-  if (!isImage) return;
+  if (event.target.nodeName !== 'IMG') return;
 
   const largeImageURL = event.target.dataset.source;
 
